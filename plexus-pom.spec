@@ -4,7 +4,7 @@
 
 Name:          %{?scl_prefix}%{pkg_name}
 Version:       3.3.1
-Release:       5.13%{?dist}
+Release:       5.14%{?dist}
 Summary:       Root Plexus Projects POM
 License:       ASL 2.0
 URL:           https://github.com/sonatype/%{pkg_name}/
@@ -12,7 +12,7 @@ Source0:       https://github.com/sonatype/plexus-pom/archive/plexus-%{version}.
 Source1:       http://www.apache.org/licenses/LICENSE-2.0.txt
 BuildArch:     noarch
 
-BuildRequires: %{?scl_prefix_java_common}maven-local
+BuildRequires: %{?scl_prefix}maven-local
 BuildRequires: %{?scl_prefix}spice-parent
 
 %description
@@ -52,6 +52,9 @@ set -e -x
 %doc LICENSE
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 3.3.1-5.14
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 3.3.1-5.13
 - maven33 rebuild #2
 
